@@ -1,0 +1,23 @@
+﻿@model List<Dish>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2><a href = "/chefs">Chefs</a> | Dishes</h2>
+    <h4>Yum, take a look at our tasty dishes!</h4>
+    <a href = "/dishes/new">Add a dish</a>
+    <hr>
+    @{
+        foreach(var dish in Model){
+            <p>Dish Name: @dish.DishName</p>
+            <p>Chef: @dish.Creator.FirstName</p>
+        }
+    }
+</body>
+</html>

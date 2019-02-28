@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Chefs | <a href = "/dishes">Dishes</a></h2>
+    <h4>Yum, take a look at our tasty dishes!</h4>
+    <a href = "/dishes/new">Add a dish</a>
+    <hr>
+    @{
+        foreach(var chef in @ViewBag.ChefwithDish){
+            <p>Chef Name: @chef.FirstName</p>
+
+            foreach(var dish in @chef.CreatedDishes){
+               <p>Dish Name: @dish.DishName</p>
+               var age = DateTime.Today.Year-@chef.DOB.Year;
+                <p>@age</p>
+            }
+            
+            <p>@chef.CreatedDishes.Count</p>
+        }
+    }
+</body>
+</html>
